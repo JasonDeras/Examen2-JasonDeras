@@ -13,6 +13,10 @@ public class Usuario extends Persona {
     public Usuario() {
     }
 
+    public Usuario(String usuario) {
+        this.usuario = usuario;
+    }
+
     public Usuario(String usuario, String contrasenia, int conexion) {
         this.usuario = usuario;
         this.contrasenia = contrasenia;

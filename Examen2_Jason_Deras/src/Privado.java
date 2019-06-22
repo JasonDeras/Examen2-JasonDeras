@@ -2,7 +2,7 @@
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Privado implements Serializable {
+public class Privado extends Chat implements Serializable {
 
     private ArrayList<Mensajes> men = new ArrayList();
     private Usuario user;

@@ -1,7 +1,7 @@
 
 import java.util.ArrayList;
 
-public class Grupo {
+public class Grupo extends Chat{
 
     private String nombre;
     private ArrayList<Usuario> miembros = new ArrayList();
@@ -50,7 +50,7 @@ public class Grupo {
 
     @Override
     public String toString() {
-        return nombre;
+        return "Grupo{" + "nombre=" + nombre + ", admin=" + admin + '}';
     }
-    
+
 }
