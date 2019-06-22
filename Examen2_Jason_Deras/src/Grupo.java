@@ -1,12 +1,14 @@
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Grupo extends Chat{
+public class Grupo extends Chat implements Serializable {
 
     private String nombre;
     private ArrayList<Usuario> miembros = new ArrayList();
     private Usuario admin;
     private ArrayList<Mensajes> men = new ArrayList();
+    private static final long SerialVersionUID = 777L;
 
     public Grupo() {
     }

@@ -2,23 +2,23 @@
 import java.io.*;
 import java.util.*;
 
-public class adminChatPrivido {
+public class adminGrupo {
 
-    private ArrayList<Privado> listp = new ArrayList();
+    private ArrayList<Grupo> listp = new ArrayList();
     private File archivo = null;
 
-    public adminChatPrivido() {
+    public adminGrupo() {
     }
 
-    public adminChatPrivido(String path) {
+    public adminGrupo(String path) {
         archivo = new File(path);
     }
 
-    public ArrayList<Privado> getListaPersonas() {
+    public ArrayList<Grupo> getListaPersonas() {
         return listp;
     }
 
-    public void setListaPersonas(ArrayList<Privado> listp) {
+    public void setListaPersonas(ArrayList<Grupo> listp) {
         this.listp = listp;
     }
 
@@ -30,19 +30,19 @@ public class adminChatPrivido {
         this.archivo = archivo;
     }
 
-    public void setAlumno(Privado a) {
+    public void setAlumno(Grupo a) {
         listp.add(a);
     }
 
     public void cargarArchivo() {
         try {
             listp = new ArrayList();
-            Privado temp;
+            Grupo temp;
             if (archivo.exists()) {
                 FileInputStream entrada = new FileInputStream(archivo);
                 ObjectInputStream objeto = new ObjectInputStream(entrada);
                 try {
-                    while ((temp = (Privado) objeto.readObject()) != null) {
+                    while ((temp = (Grupo) objeto.readObject()) != null) {
                         listp.add(temp);
                     }
                 } catch (EOFException e) {
@@ -62,7 +62,7 @@ public class adminChatPrivido {
         try {
             fw = new FileOutputStream(archivo);
             bw = new ObjectOutputStream(fw);
-            for (Privado t : listp) {
+            for (Grupo t : listp) {
                 bw.writeObject(t);
             }
             bw.flush();
